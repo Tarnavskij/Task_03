@@ -5,33 +5,30 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        int array[];                              //объявил массив
+        System.out.print("Enter the length of an array: ");
+        int arrayLength = Integer.valueOf(scanner.nextLine());
+        int array[] = new int[arrayLength];
 
 
-        Scanner scanner = new Scanner(System.in); //добавил сканер
-        System.out.println("enterArrayLength: "); //добавил подпись для сканера
-
-        int arrayLength = scanner.nextInt();      //присваивание знач. сканера к переменной
-        System.out.println("Length = " + arrayLength); // вывел длинну массива в консоль
-        array = new int[arrayLength];                  // присваивание переменной длинне массива
-
-        for (int i = 0; i < arrayLength; i++) {         // цикл для перебора по длине массива
-            array[i] = scanner.nextInt();               // с помощью сканера присваиваем значение
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Integer.valueOf(scanner.nextLine());
         }
 
-        System.out.println("your array: ");             //ваш массив
-        for (int i = 0; i < arrayLength; i++){          //цикл
+        System.out.println("Your array: ");
+        for (int i = 0; i < array.length; i++){
             System.out.print("[" + array[i] + "] ");
         }
-        System.out.println("\nGood job!\nElements multiples of 3 ");
-                //arrayLength количество элементов массива
-                //array[i] заполненнные элементы массива
 
-        for (int i = 0; i < arrayLength; i++){
+        System.out.println("\nGood job!\nElements multiples of 3 ");
+
+
+        for (int i = 0; i < array.length; i++){
             if (array[i] % 3 == 0){
                 System.out.print("[" + array[i] + "] ");
             }
         }
     }
 }
+
